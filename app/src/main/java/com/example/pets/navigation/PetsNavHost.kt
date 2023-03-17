@@ -36,7 +36,7 @@ sealed class NavRoute(val route:String){
 fun PetsNavHost() {
     val navController= rememberNavController()
 
-    NavHost(navController = navController, startDestination = NavRoute.Shoping.route ){
+    NavHost(navController = navController, startDestination = NavRoute.Authotization.route ){
         composable(NavRoute.Start.route){
             Main()
         }

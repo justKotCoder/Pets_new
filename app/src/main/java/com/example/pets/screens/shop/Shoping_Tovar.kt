@@ -90,6 +90,7 @@ fun Shoping_Tovar(navController:NavController,tovar: Tovar){
                         Text("Параметр", fontSize = 14.sp)
                         Text("--------------")
                         Text(text = "2.4 кг", fontSize = 14.sp)
+
                     }
                 }
             }

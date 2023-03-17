@@ -13,6 +13,11 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.lifecycleScope
 import com.example.pets._class.*
+import com.example.pets.amir.Test
+import com.example.pets.amir._class1.User1
+import com.example.pets.amir._class1.Users
+import com.example.pets.amir._class1.загр
+import com.example.pets.amir.navig.NavHost
 import com.example.pets.navigation.PetsNavHost
 import com.example.pets.screens.Main
 import com.example.pets.screens.shop.Shoping_Tovar
@@ -45,21 +50,23 @@ class MainActivity : ComponentActivity() {
                         Surface(
                             modifier = Modifier.fillMaxSize()
                         ) {
-                            if(a==true) {
-                                var pets1= Pets()
-                                pets=pets1
-                                загрузка()
-                                Log.d("kk", List_Tovar?.size.toString())
-
-                                //Calendar()
-                                //Passport_Notes()
-                                PetsNavHost()
-                            }
-                            else{
-                                Main()
-                                     GlobalScope.launch { doWork() }
-                            }
-
+                            //if(a==true) {
+                            //    var pets1= Pets()
+                            //    pets=pets1
+                            //    загрузка()
+                            //    Log.d("kk", List_Tovar?.size.toString())
+                            //    Calendar()
+                            //    Passport_Notes()
+                            //    PetsNavHost()
+                            //}
+                            //else{
+                            //    Main()
+                            //         GlobalScope.launch { doWork() }
+                            //}
+                            загр()
+                            // Log.d("tt", Users?.size.toString())
+                            //Test()
+                            NavHost()
                         }
                 }
             }

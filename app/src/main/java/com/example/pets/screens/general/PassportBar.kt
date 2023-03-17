@@ -1,6 +1,7 @@
 package com.example.pets.screens.general
 
 import androidx.compose.animation.*
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -22,6 +23,14 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.pets.R
 import com.example.pets.navigation.NavRoute
+
+var enter:EnterTransition= fadeIn(
+    initialAlpha = 0.4f
+)
+var exit :ExitTransition= fadeOut(
+
+animationSpec = tween(durationMillis = 250)
+)
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
@@ -66,7 +75,7 @@ fun PassportBar(navController: NavController) {
                         .padding(top = 22.dp)
                         .width(33.dp)
                         .height(33.dp)){
-                    this@Column.AnimatedVisibility(if (navController.currentBackStackEntry?.destination?.route== NavRoute.Passport_Edit.route){true}else{false}) {
+                    this@Column.AnimatedVisibility(if (navController.currentBackStackEntry?.destination?.route== NavRoute.Passport_Edit.route){true}else{false},enter= enter, exit= exit) {
                         Image(painter = painterResource(id = R.drawable.crycle), contentDescription ="", modifier = Modifier.align(
                             Alignment.Center))
                     }
@@ -86,7 +95,7 @@ fun PassportBar(navController: NavController) {
                         .padding(top = 2.dp)
                         .width(33.dp)
                         .height(33.dp)){
-                    this@Column.AnimatedVisibility(if (navController.currentBackStackEntry?.destination?.route== NavRoute.Passport_Clendar.route){true}else{false}) {
+                    this@Column.AnimatedVisibility(if (navController.currentBackStackEntry?.destination?.route== NavRoute.Passport_Clendar.route){true}else{false},enter= enter, exit= exit) {
                         Image(painter = painterResource(id = R.drawable.crycle), contentDescription ="", modifier = Modifier.align(
                             Alignment.Center))
                     }
@@ -106,7 +115,7 @@ fun PassportBar(navController: NavController) {
                         .padding(top = 2.dp)
                         .width(33.dp)
                         .height(33.dp)){
-                    this@Column.AnimatedVisibility(if (navController.currentBackStackEntry?.destination?.route== NavRoute.Passport_Notes.route){true}else{false}) {
+                    this@Column.AnimatedVisibility(if (navController.currentBackStackEntry?.destination?.route== NavRoute.Passport_Notes.route){true}else{false},enter= enter, exit= exit) {
                         Image(painter = painterResource(id = R.drawable.crycle), contentDescription ="", modifier = Modifier.align(
                             Alignment.Center))
                     }
