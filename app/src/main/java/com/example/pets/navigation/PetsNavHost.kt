@@ -4,10 +4,10 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.pets._class.Tovar
 import com.example.pets._class.tovar1
 import com.example.pets.pets
 import com.example.pets.screens.*
+import com.example.pets.screens.registration.Registration
 import com.example.pets.screens.shop.Shoping_Tovar
 import com.example.pets.viewModel.Registration2_ViewModel
 import com.example.pets.viewModel.Registration_ViewModel

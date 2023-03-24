@@ -18,6 +18,7 @@ import com.example.pets.amir._class1.User1
 import com.example.pets.amir._class1.Users
 import com.example.pets.amir._class1.загр
 import com.example.pets.amir.navig.NavHost
+import com.example.pets.navigation.NavRoute
 import com.example.pets.navigation.PetsNavHost
 import com.example.pets.screens.Main
 import com.example.pets.screens.shop.Shoping_Tovar
@@ -57,16 +58,16 @@ class MainActivity : ComponentActivity() {
                             //    Log.d("kk", List_Tovar?.size.toString())
                             //    Calendar()
                             //    Passport_Notes()
-                            //    PetsNavHost()
+                                PetsNavHost()
                             //}
                             //else{
                             //    Main()
                             //         GlobalScope.launch { doWork() }
                             //}
-                            загр()
+                            //загр()
                             // Log.d("tt", Users?.size.toString())
                             //Test()
-                            NavHost()
+                            //NavHost()
                         }
                 }
             }

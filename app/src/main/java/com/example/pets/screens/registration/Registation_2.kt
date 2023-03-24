@@ -14,11 +14,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.pets.R
+import com.example.pets.logic.asynkClass.createNewUser.Data
 import com.example.pets.navigation.NavRoute
+import com.example.pets.ui.theme.PetsTheme
 import com.example.pets.viewModel.Registration2_ViewModel
 
 @SuppressLint("StateFlowValueCalledInComposition")
@@ -84,9 +88,6 @@ fun Registration_2(navController: NavController,viewModel: Registration2_ViewMod
                             Text(text =if(viewModel.Code.value.length > i){viewModel.Code.value[i].toString()}else{" "}
                                 , fontSize = 20.sp)
                             Log.d("Egor1",viewModel.Code.value.length.toString())
-
-
-
                             Spacer(
                                 modifier = Modifier
                                     .width(30.dp)
@@ -105,9 +106,8 @@ fun Registration_2(navController: NavController,viewModel: Registration2_ViewMod
                     Color.Red},
                 modifier = Modifier.padding(top=8.dp))
             Button(onClick = {
-                Log.d("Egor2",viewModel.Code.value.toString())
-                Log.d("Egor2",code_prov.value.toString())
-                if(viewModel.Code.value==viewModel.Code_Prover.value) {
+
+                if(Data.code==viewModel.Code.value) {
                     navController.navigate(NavRoute.Registration_3.route)
                 }
                 else{
@@ -134,4 +134,11 @@ fun Registration_2(navController: NavController,viewModel: Registration2_ViewMod
 
     }
 
+}
+@Preview(showBackground = true)
+@Composable
+fun showReg2(){
+    PetsTheme {
+        Registration_2(navController = rememberNavController(), Registration2_ViewModel())
+    }
 }

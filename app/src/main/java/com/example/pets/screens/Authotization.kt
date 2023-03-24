@@ -19,6 +19,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.pets.R
@@ -110,8 +111,11 @@ fun Authotization (navController: NavController){
                         color = colorResource(id = R.color.color_text)
                     )
                 }
-                Button(onClick = {navController.navigate(NavRoute.Shoping.route)
-                                 visibility=true},
+                Button(onClick = {
+
+                    navController.navigate(NavRoute.Shoping.route)
+                                 visibility=true
+                                 },
                     shape = RoundedCornerShape(20.dp),
                     colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(id = R.color.icon), contentColor = Color.Black),
                     modifier = Modifier
@@ -124,7 +128,8 @@ fun Authotization (navController: NavController){
                     fontSize = 14.sp,
                     modifier = Modifier
                         .padding(top = 8.dp)
-                        .clickable { navController.navigate(NavRoute.Registration.route)},
+
+                        .clickable {navController.navigate(NavRoute.Registration.route) },
                     color= colorResource(id = R.color.color_1)
                 )
 
