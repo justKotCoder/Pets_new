@@ -38,7 +38,11 @@ public class SendMailTask extends AsyncTask<Void, Void, Void> {
         Session session = Session.getDefaultInstance(props,
                 new javax.mail.Authenticator() {
                     protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
+<<<<<<< HEAD
                         return new javax.mail.PasswordAuthentication("vbvbyhhhgh@gmail.com", "xmbfkyphaxrtaefz");
+=======
+                        return new javax.mail.PasswordAuthentication("vbvbyhhhgh@gmail.com", "dxnewywpvtuadwax");
+>>>>>>> dc79291c041938fd1da2c31c6421eebfc50c4ab7
                     }
                 });
 

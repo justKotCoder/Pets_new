@@ -86,7 +86,11 @@ fun Registration_3(navController: NavController){
 }
 @Preview(showBackground = true)
 @Composable
+<<<<<<< HEAD
 fun viewRegistration3(){
+=======
+fun showReg3(){
+>>>>>>> dc79291c041938fd1da2c31c6421eebfc50c4ab7
     PetsTheme {
         Registration_3(navController = rememberNavController())
     }

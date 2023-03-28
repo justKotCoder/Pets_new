@@ -80,6 +80,7 @@ fun Password_Recovery(navController: NavController,viewModel: Registration_ViewM
 
     }
 }
+<<<<<<< HEAD
 @Preview(showBackground = true)
 @Composable
 fun viewPassword(){
@@ -87,3 +88,5 @@ fun viewPassword(){
         Password_Recovery(navController = rememberNavController(), Registration_ViewModel())
     }
 }
+=======
+>>>>>>> dc79291c041938fd1da2c31c6421eebfc50c4ab7

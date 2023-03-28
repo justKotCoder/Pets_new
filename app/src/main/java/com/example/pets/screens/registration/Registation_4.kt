@@ -22,14 +22,22 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.pets.R
+<<<<<<< HEAD
 import com.example.pets.logic.asynkClass.createNewUser.CreateUser
+=======
+import com.example.pets.amir.firebase.addUsers
+>>>>>>> dc79291c041938fd1da2c31c6421eebfc50c4ab7
 import com.example.pets.logic.asynkClass.createNewUser.Data
 import com.example.pets.navigation.NavRoute
 import com.example.pets.ui.theme.PetsTheme
 
 @Composable
 fun Registration_4(navController: NavController){
+<<<<<<< HEAD
     val context = LocalContext.current
+=======
+    val context= LocalContext.current
+>>>>>>> dc79291c041938fd1da2c31c6421eebfc50c4ab7
     var password by remember {
         mutableStateOf("")
     }
@@ -133,9 +141,18 @@ fun Registration_4(navController: NavController){
                 Color.Transparent}, modifier = Modifier.padding(top=8.dp))
             Button(onClick = {
 
+<<<<<<< HEAD
                 if(password==copy_password &&password.length>8){
                     CreateUser(email = Data.email, password=password, context=context)
                     navController.run { navigate(NavRoute.Authotization.route){popUpTo(0)} }
+=======
+                if(password==copy_password &&password.length>8 &&copy_password.length>8){
+                    Data.password=password
+                    addUsers(Data.email, Data.password,context)
+
+                    navController.run { navigate(NavRoute.Authotization.route){popUpTo(0)}
+                    }
+>>>>>>> dc79291c041938fd1da2c31c6421eebfc50c4ab7
                 }
                 else{
                     Error=true
@@ -157,7 +174,11 @@ fun Registration_4(navController: NavController){
 }
 @Preview(showBackground = true)
 @Composable
+<<<<<<< HEAD
 fun viewRegistration4(){
+=======
+fun showReg4(){
+>>>>>>> dc79291c041938fd1da2c31c6421eebfc50c4ab7
     PetsTheme {
         Registration_4(navController = rememberNavController())
     }

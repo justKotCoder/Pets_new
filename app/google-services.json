@@ -1,7 +1,10 @@
 {
   "project_info": {
     "project_number": "937401778925",
+<<<<<<< HEAD
     "firebase_url": "https://pets-35943-default-rtdb.europe-west1.firebasedatabase.app",
+=======
+>>>>>>> dc79291c041938fd1da2c31c6421eebfc50c4ab7
     "project_id": "pets-35943",
     "storage_bucket": "pets-35943.appspot.com"
   },
@@ -15,7 +18,11 @@
       },
       "oauth_client": [
         {
+<<<<<<< HEAD
           "client_id": "937401778925-n4dnncsf06and0nnsdfm7ah57b4b2aom.apps.googleusercontent.com",
+=======
+          "client_id": "937401778925-mi4dku40j7m33piv3004rqa47f15ds0g.apps.googleusercontent.com",
+>>>>>>> dc79291c041938fd1da2c31c6421eebfc50c4ab7
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.pets",
