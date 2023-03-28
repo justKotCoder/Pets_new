@@ -106,11 +106,9 @@ fun Registration_2(navController: NavController,viewModel: Registration2_ViewMod
                     Color.Red},
                 modifier = Modifier.padding(top=8.dp))
             Button(onClick = {
-<<<<<<< HEAD
                 Log.d("Egor2",viewModel.Code.value.toString())
                 Log.d("Egor2",Data.code.toString())
-=======
->>>>>>> dc79291c041938fd1da2c31c6421eebfc50c4ab7
+
 
                 if(Data.code==viewModel.Code.value) {
                     navController.navigate(NavRoute.Registration_3.route)
@@ -142,11 +140,7 @@ fun Registration_2(navController: NavController,viewModel: Registration2_ViewMod
 }
 @Preview(showBackground = true)
 @Composable
-<<<<<<< HEAD
 fun viewRegistration2(){
-=======
-fun showReg2(){
->>>>>>> dc79291c041938fd1da2c31c6421eebfc50c4ab7
     PetsTheme {
         Registration_2(navController = rememberNavController(), Registration2_ViewModel())
     }

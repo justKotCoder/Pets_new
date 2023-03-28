@@ -62,11 +62,9 @@ class MainActivity : ComponentActivity() {
                             //    Log.d("kk", List_Tovar?.size.toString())
                             //    Calendar()
                             //    Passport_Notes()
-<<<<<<< HEAD
+
                               PetsNavHost()
-=======
-                                PetsNavHost()
->>>>>>> dc79291c041938fd1da2c31c6421eebfc50c4ab7
+
                             //}
                             //else{
                             //    Main()
@@ -76,10 +74,7 @@ class MainActivity : ComponentActivity() {
                             // Log.d("tt", Users?.size.toString())
                             //Test()
                             //NavHost()
-<<<<<<< HEAD
 
-=======
->>>>>>> dc79291c041938fd1da2c31c6421eebfc50c4ab7
                         }
                 }
             }

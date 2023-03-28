@@ -12,11 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
-<<<<<<< HEAD
-=======
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
->>>>>>> dc79291c041938fd1da2c31c6421eebfc50c4ab7
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -25,13 +22,9 @@ import com.example.pets.R
 import com.example.pets.logic.asynkClass.FunSendMess.sendNessage
 import com.example.pets.logic.asynkClass.createNewUser.Data
 import com.example.pets.navigation.NavRoute
-<<<<<<< HEAD
-import com.example.pets.ui.theme.PetsTheme
-=======
-import com.example.pets.screens.Authotization
+
 import com.example.pets.ui.theme.PetsTheme
 
->>>>>>> dc79291c041938fd1da2c31c6421eebfc50c4ab7
 
 @Composable
 fun Registration(@PreviewParameter(PreviewParameterProvider::class)navController: NavController){
@@ -91,11 +84,8 @@ fun Registration(@PreviewParameter(PreviewParameterProvider::class)navController
 }
 @Preview(showBackground = true)
 @Composable
-<<<<<<< HEAD
 fun viewRegistration(){
-=======
-fun showReg1(){
->>>>>>> dc79291c041938fd1da2c31c6421eebfc50c4ab7
+
     PetsTheme {
         Registration(navController = rememberNavController())
     }
