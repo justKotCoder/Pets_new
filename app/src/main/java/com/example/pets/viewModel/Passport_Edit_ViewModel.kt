@@ -13,6 +13,8 @@ class Passport_Edit_ViewModel :ViewModel() {
     val Harackter: MutableStateFlow<ArrayList<String>> = MutableStateFlow(pets?.GetСharacteristic()!!)
     val OpicHaracket: MutableStateFlow<ArrayList<String>> = MutableStateFlow(pets?.GetСharacteristic_Opicanie()!!)
     val count: MutableStateFlow<Int> = MutableStateFlow(pets?.GetSizeList()!!)
+
+
     fun name(){
         pets?.SetNick(Nickname.toString())
     }

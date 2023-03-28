@@ -22,15 +22,18 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.pets.*
 import com.example.pets.R
 import com.example.pets._class.*
 import com.example.pets.navigation.NavRoute
 
 import com.example.pets.screens.general._BottomBar
+import com.example.pets.ui.theme.PetsTheme
 import com.example.pets.viewModel.Shoping_ViewModel
 import kotlin.math.roundToInt
 
@@ -217,5 +220,13 @@ fun ListTovar(viewModel: Shoping_ViewModel){
         for(i in 1..3){
             //RowTovar(i,viewModel)
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun viewShop(){
+    PetsTheme {
+        Shoping(navController = rememberNavController(), Shoping_ViewModel())
     }
 }

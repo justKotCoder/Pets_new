@@ -11,18 +11,25 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.pets.R
+import com.example.pets.logic.asynkClass.createNewUser.CreateUser
+import com.example.pets.logic.asynkClass.createNewUser.Data
 import com.example.pets.navigation.NavRoute
+import com.example.pets.ui.theme.PetsTheme
 
 @Composable
 fun Registration_4(navController: NavController){
+    val context = LocalContext.current
     var password by remember {
         mutableStateOf("")
     }
@@ -126,7 +133,8 @@ fun Registration_4(navController: NavController){
                 Color.Transparent}, modifier = Modifier.padding(top=8.dp))
             Button(onClick = {
 
-                if(password==copy_password &&password.length>8 &&copy_password.length>8){
+                if(password==copy_password &&password.length>8){
+                    CreateUser(email = Data.email, password=password, context=context)
                     navController.run { navigate(NavRoute.Authotization.route){popUpTo(0)} }
                 }
                 else{
@@ -145,5 +153,12 @@ fun Registration_4(navController: NavController){
 
         }
 
+    }
+}
+@Preview(showBackground = true)
+@Composable
+fun viewRegistration4(){
+    PetsTheme {
+        Registration_4(navController = rememberNavController())
     }
 }

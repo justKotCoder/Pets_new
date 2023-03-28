@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.pets.R
+import com.example.pets.logic.asynkClass.createNewUser.SignIn
 
 import com.example.pets.navigation.NavRoute
 import com.example.pets.pets
@@ -29,10 +30,9 @@ import com.example.pets.pets
 import com.example.pets.ui.theme.PetsTheme
 
 
-
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun Authotization (navController: NavController){
+fun Authotization(navController: NavController) {
     var email by remember {
         mutableStateOf("")
     }
@@ -42,27 +42,39 @@ fun Authotization (navController: NavController){
     var visibility by remember {
         mutableStateOf(false)
     }
-    Scaffold(){
+    Scaffold() {
         Box(
             Modifier
                 .fillMaxSize()
-                .background(color = colorResource(id = R.color.Font_Main))) {
+                .background(color = colorResource(id = R.color.Font_Main))
+        ) {
             Column(
                 Modifier
                     .padding(start = 20.dp, end = 20.dp, top = 52.dp)
-                    .fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-                Text(text ="Добро Пожаловать", fontSize = 28.sp, color = colorResource(id = R.color.color_tema))
+                    .fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(
+                    text = "Добро Пожаловать",
+                    fontSize = 28.sp,
+                    color = colorResource(id = R.color.color_tema)
+                )
                 Box(
                     Modifier
                         .fillMaxWidth()
-                        .padding(top = 32.dp, start = 16.dp)) {
-                    Text("Введите email", fontSize = 14.sp, modifier =Modifier.align(Alignment.BottomStart),color= colorResource(
-                        id = R.color.color_text
-                    ))
+                        .padding(top = 32.dp, start = 16.dp)
+                ) {
+                    Text(
+                        "Введите email",
+                        fontSize = 14.sp,
+                        modifier = Modifier.align(Alignment.BottomStart),
+                        color = colorResource(
+                            id = R.color.color_text
+                        )
+                    )
                 }
                 TextField(
                     value = email,
-                    onValueChange ={email=it},
+                    onValueChange = { email = it },
                     leadingIcon = { Icon(Icons.Filled.Email, contentDescription = "Поиск") },
                     shape = RoundedCornerShape(20.dp),
                     maxLines = 1,
@@ -78,14 +90,20 @@ fun Authotization (navController: NavController){
                 Box(
                     Modifier
                         .fillMaxWidth()
-                        .padding(top = 16.dp, start = 16.dp)) {
-                    Text("Введите пароль", fontSize = 14.sp, modifier =Modifier.align(Alignment.BottomStart), color = colorResource(
-                        id = R.color.color_text
-                    ))
+                        .padding(top = 16.dp, start = 16.dp)
+                ) {
+                    Text(
+                        "Введите пароль",
+                        fontSize = 14.sp,
+                        modifier = Modifier.align(Alignment.BottomStart),
+                        color = colorResource(
+                            id = R.color.color_text
+                        )
+                    )
                 }
                 TextField(
                     value = password,
-                    onValueChange ={password=it},
+                    onValueChange = { password = it },
                     leadingIcon = { Icon(Icons.Filled.Lock, contentDescription = "Поиск") },
                     shape = RoundedCornerShape(20.dp),
                     maxLines = 1,
@@ -102,43 +120,54 @@ fun Authotization (navController: NavController){
                 Box(
                     Modifier
                         .fillMaxWidth()
-                        .padding(end = 9.dp)) {
-                    Text("Забыли пароль?", fontSize = 14.sp,
+                        .padding(end = 9.dp)
+                ) {
+                    Text(
+                        "Забыли пароль?", fontSize = 14.sp,
                         modifier = Modifier
                             .align(Alignment.BottomEnd)
                             .clickable { navController.navigate(NavRoute.Password_Recovery.route) },
                         color = colorResource(id = R.color.color_text)
                     )
                 }
-                Button(onClick = {navController.navigate(NavRoute.Shoping.route)
-                                 visibility=true},
+                Button(
+                    onClick = {
+                        SignIn(email = email, password=password, navController)
+                        navController.navigate(NavRoute.Shoping.route)
+                        visibility = true
+
+                    },
                     shape = RoundedCornerShape(20.dp),
-                    colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(id = R.color.icon), contentColor = Color.Black),
+                    colors = ButtonDefaults.buttonColors(
+                        backgroundColor = colorResource(id = R.color.icon),
+                        contentColor = Color.Black
+                    ),
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(top = 54.dp)) {
-                    Text(text = "Войти", fontSize = 22.sp,color=Color.White)
+                        .padding(top = 54.dp)
+                ) {
+                    Text(text = "Войти", fontSize = 22.sp, color = Color.White)
                 }
                 Text(
                     text = "Регистрация",
                     fontSize = 14.sp,
                     modifier = Modifier
                         .padding(top = 8.dp)
-                        .clickable { navController.navigate(NavRoute.Registration.route)},
-                    color= colorResource(id = R.color.color_1)
+                        .clickable { navController.navigate(NavRoute.Registration.route) },
+                    color = colorResource(id = R.color.color_1)
                 )
 
             }
 
         }
 
-   }
+    }
 
 }
 
 @Preview(showBackground = true)
 @Composable
-fun pewStartScreen(){
+fun pewStartScreen() {
     PetsTheme {
         Authotization(navController = rememberNavController())
     }

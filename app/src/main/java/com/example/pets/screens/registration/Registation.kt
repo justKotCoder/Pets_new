@@ -11,11 +11,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.pets.R
+import com.example.pets.logic.asynkClass.FunSendMess.sendNessage
+import com.example.pets.logic.asynkClass.createNewUser.Data
 import com.example.pets.navigation.NavRoute
+import com.example.pets.ui.theme.PetsTheme
 
 @Composable
 fun Registration(navController: NavController){
@@ -56,10 +61,9 @@ fun Registration(navController: NavController){
                 modifier = Modifier.fillMaxWidth()
             )
             Button(onClick = {
-
+                Data.email=email
+                Data.code=sendNessage(email)
                 navController.navigate(NavRoute.Registration_2.route)
-
-
             },
                 shape = RoundedCornerShape(20.dp),
                 colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(id = R.color.icon), contentColor = Color.Black),
@@ -72,5 +76,12 @@ fun Registration(navController: NavController){
 
         }
 
+    }
+}
+@Preview(showBackground = true)
+@Composable
+fun viewRegistration(){
+    PetsTheme {
+        Registration(navController = rememberNavController())
     }
 }

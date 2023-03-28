@@ -11,11 +11,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.pets.R
 import com.example.pets.navigation.NavRoute
+import com.example.pets.ui.theme.PetsTheme
 import com.example.pets.viewModel.Registration_ViewModel
 
 
@@ -75,5 +78,12 @@ fun Password_Recovery(navController: NavController,viewModel: Registration_ViewM
 
         }
 
+    }
+}
+@Preview(showBackground = true)
+@Composable
+fun viewPassword(){
+    PetsTheme {
+        Password_Recovery(navController = rememberNavController(), Registration_ViewModel())
     }
 }

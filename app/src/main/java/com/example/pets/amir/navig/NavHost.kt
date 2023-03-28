@@ -1,6 +1,7 @@
 package com.example.pets.amir.navig
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -28,7 +29,7 @@ fun NavHost() {
 
     NavHost(navController = navController, startDestination = NavRoute1.Test.route ){
         composable(NavRoute1.Test.route){
-            Test(navController)
+            Authotization(navController = navController)
         }
         composable(NavRoute1.Test2.route){
             Test2()
