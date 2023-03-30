@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.modifier.modifierLocalConsumer
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
@@ -43,6 +44,7 @@ fun Authotization(navController: NavController) {
     var visibility by remember {
         mutableStateOf(false)
     }
+    val context = LocalContext.current
     Scaffold() {
         Box(
             Modifier
@@ -134,9 +136,9 @@ fun Authotization(navController: NavController) {
 
                 Button(
                     onClick = {
-                        SignIn(email = email, password=password, navController)
-                        navController.navigate(NavRoute.Shoping.route)
-                        visibility = true
+                        SignIn(email = email, password = password, navController, context)
+                        //navController.navigate(NavRoute.Shoping.route)
+                        //visibility = true
 
                     },
 

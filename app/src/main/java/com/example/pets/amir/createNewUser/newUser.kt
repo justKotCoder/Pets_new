@@ -2,6 +2,7 @@ package com.example.pets.logic.asynkClass.createNewUser
 
 
 import android.content.Context
+import android.widget.Toast
 
 import androidx.navigation.NavController
 import com.example.pets.navigation.NavRoute
@@ -27,18 +28,21 @@ fun CreateUser(  email: String,password: String, context: Context){
         }
 
 }
-fun SignIn(email: String, password: String, navController: NavController){
+fun SignIn(email: String, password: String, navController: NavController, context: Context){
+    auth=Firebase.auth
+    try {
     auth.signInWithEmailAndPassword(email, password)
         .addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                // Sign in success, update UI with the signed-in user's information
-                navController.navigate(NavRoute.Shoping.route)
+                navController.navigate(NavRoute.Registration_2.route)
             } else {
-
-                // If sign in fails, display a message to the user.
-
+                Toast.makeText(context, "Такого пользователя не существует", Toast.LENGTH_LONG).show()
             }
         }
+    }
+    catch (e:IllegalArgumentException){
+        Toast.makeText(context, "Введите данные", Toast.LENGTH_LONG).show()
+    }
 
 }
 
