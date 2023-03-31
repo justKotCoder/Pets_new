@@ -136,11 +136,11 @@ fun Registration_4(navController: NavController){
             Button(onClick = {
 
 
-                if(password==copy_password &&password.length>8 &&copy_password.length>8){
+                if(password==copy_password &&password.length>8 ){
                     Data.password=password
                     addUsers(Data.email, Data.password,context)
 
-                    navController.run { navigate(NavRoute.Authotization.route){popUpTo(0)}
+                    navController.run { navigate(NavRoute.Start_Passpoer.route){popUpTo(0)}
                     }
                 }
                 else{
