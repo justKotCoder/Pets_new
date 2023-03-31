@@ -34,7 +34,7 @@ fun SignIn(email: String, password: String, navController: NavController, contex
     auth.signInWithEmailAndPassword(email, password)
         .addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                navController.navigate(NavRoute.Registration_2.route)
+                navController.navigate(NavRoute.Start_Passpoer.route)
             } else {
                 Toast.makeText(context, "Такого пользователя не существует", Toast.LENGTH_LONG).show()
             }
