@@ -24,15 +24,18 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.pets.R
 import com.example.pets.navigation.NavRoute
+import com.example.pets.screens.Authotization
 import com.example.pets.ui.theme.Blauw200
 import com.example.pets.ui.theme.Blue200
+import com.example.pets.ui.theme.PetsTheme
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
-@Preview()
 @Composable
-fun StartScreen() {
+fun StartScreen(navController: NavController) {
     Scaffold(
         Modifier.background(color = colorResource(id = R.color.Font_Main))
     ) {
@@ -67,20 +70,21 @@ fun StartScreen() {
 
 
                 }
-
-
-                Text(text = "У вас ещё нет питомцев", modifier = Modifier.fillMaxWidth(1f) ,color = Blue200,  fontSize=22.sp, textAlign = TextAlign.Center)
-
-
-
-
+                Text(
+                    text = "У вас ещё нет питомцев",
+                    modifier = Modifier.fillMaxWidth(1f),
+                    color = Blue200,
+                    fontSize = 22.sp,
+                    textAlign = TextAlign.Center
+                )
 
                 Button(
                     onClick = { NavRoute.Passport },
                     colors = ButtonDefaults.buttonColors(backgroundColor = Blauw200),
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(10.dp).height(60.dp)
+                        .padding(10.dp)
+                        .height(60.dp)
 
                 ) {
                     Text(
@@ -104,10 +108,13 @@ fun StartScreen() {
 //                        contentDescription = "Хаски"
 //                    )
 
-
-
-
-
+@Preview
+@Composable
+fun viewStart_Passport(){
+    PetsTheme {
+        StartScreen(navController = rememberNavController())
+    }
+}
 
 
 

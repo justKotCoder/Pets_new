@@ -7,6 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.pets._class.tovar1
 import com.example.pets.pets
 import com.example.pets.screens.*
+import com.example.pets.screens.passport.StartScreen
 import com.example.pets.screens.registration.Registration
 import com.example.pets.screens.shop.Shoping_Tovar
 import com.example.pets.viewModel.Registration2_ViewModel
@@ -30,6 +31,7 @@ sealed class NavRoute(val route:String){
     object Shoping:NavRoute("shop_screen")
     object Authotization:NavRoute("authotiz_screen")
     object Shoping_Tovar:NavRoute("shoping_tovar")
+    object Start_Passpoer:NavRoute("start_passport")
 }
 
 @Composable
@@ -81,6 +83,9 @@ fun PetsNavHost() {
         }
         composable(NavRoute.Shoping_Tovar.route){
             Shoping_Tovar(navController = navController, tovar = tovar1!!)
+        }
+        composable(NavRoute.Start_Passpoer.route){
+            StartScreen(navController = navController)
         }
 
     }
