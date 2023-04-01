@@ -5,12 +5,10 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
@@ -28,7 +26,8 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.pets.R
 import com.example.pets.navigation.NavRoute
-import com.example.pets.screens.Authotization
+import com.example.pets.navigation.PetsNavHost
+import com.example.pets.screens.general._BottomBar
 import com.example.pets.ui.theme.Blauw200
 import com.example.pets.ui.theme.Blue200
 import com.example.pets.ui.theme.PetsTheme
@@ -39,63 +38,89 @@ fun StartScreen(navController: NavController) {
     Scaffold(
         Modifier.background(color = colorResource(id = R.color.Font_Main))
     ) {
-        Box(
-            Modifier
-                .fillMaxSize()
-                .background(color = colorResource(id = R.color.Font_Main))
+        Surface(
+            modifier = Modifier.fillMaxSize()
         ) {
-            Spacer(
-                modifier = Modifier
-                    .width(560.dp)
-                    .height(638.dp)
-                    .rotate(45f)
-                    .offset(x = -165.dp, y = -50.dp)
-                    .clip(RoundedCornerShape(135.dp))
-                    .background(color = colorResource(id = R.color.Font))
-            )
-            Column(
-                modifier = Modifier.fillMaxSize(),
-                verticalArrangement = Arrangement.SpaceBetween
+
+            Box(
+                Modifier
+                    .fillMaxSize()
+                    .background(color = colorResource(id = R.color.Font_Main))
             ) {
-                Box(
+                Spacer(
                     modifier = Modifier
-                        .weight(1f)
-                        .fillMaxSize()
-                ) {
-                    Image(
-                        imageVector = ImageVector.vectorResource(R.drawable.haski2),
-                        contentDescription = "Хаски",
-                        modifier = Modifier.fillMaxSize()
-                    )
-
-
-                }
-                Text(
-                    text = "У вас ещё нет питомцев",
-                    modifier = Modifier.fillMaxWidth(1f),
-                    color = Blue200,
-                    fontSize = 22.sp,
-                    textAlign = TextAlign.Center
+                        .width(560.dp)
+                        .height(638.dp)
+                        .rotate(45f)
+                        .offset(x = -165.dp, y = -50.dp)
+                        .clip(RoundedCornerShape(135.dp))
+                        .background(color = colorResource(id = R.color.Font))
                 )
-
-                Button(
-                    onClick = { NavRoute.Passport },
-                    colors = ButtonDefaults.buttonColors(backgroundColor = Blauw200),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp)
-                        .height(60.dp)
-
+                Column(
+                    modifier = Modifier.fillMaxSize(),
+                    verticalArrangement = Arrangement.SpaceBetween,
+                    horizontalAlignment = Alignment.CenterHorizontally
                 ) {
+                    Box(
+                        modifier = Modifier
+                            .weight(1f)
+                            .fillMaxSize()
+                    ) {
+                        Image(
+                            imageVector = ImageVector.vectorResource(R.drawable.haski2),
+                            contentDescription = "Хаски",
+                            modifier = Modifier.fillMaxSize()
+                        )
+
+
+                    }
+
+
                     Text(
-                        text = "Добавить",
-                        color = Color.White
+                        text = "У вас ещё нет питомцев !",
+                        modifier = Modifier.fillMaxWidth()
+                            .width(256.dp)
+                            .height(28.dp),
+                        color = Blue200,
+                        fontSize = 22.sp,
+                        textAlign = TextAlign.Center
                     )
+
+
+
+
+
+                    Button(
+                        onClick = { NavRoute.Passport },
+                        colors = ButtonDefaults.buttonColors(backgroundColor = Blauw200),
+                        modifier = Modifier
+                            .width(256.dp)
+                            .padding(10.dp)
+                            .height(49.dp)
+
+                    ) {
+                        Text(
+                            text = "Добавить",
+                            color = Color.White
+                        )
+                    }
                 }
             }
+
         }
     }
 }
+
+@Preview(showBackground = true)
+@Composable
+fun viewRegistration5(){
+
+    PetsTheme {
+        StartScreen(navController = rememberNavController())
+    }
+}
+
+
 
 //            Column(
 //                Modifier
@@ -108,13 +133,10 @@ fun StartScreen(navController: NavController) {
 //                        contentDescription = "Хаски"
 //                    )
 
-@Preview
-@Composable
-fun viewStart_Passport(){
-    PetsTheme {
-        StartScreen(navController = rememberNavController())
-    }
-}
+
+
+
+
 
 
 
